@@ -1,8 +1,4 @@
-# Build a class EmailParser that accepts a string of unformatted
-# emails. The parse method on the class should separate them into
-# unique email addresses. The delimiters to support are commas (',')
-# or whitespace (' ').
-
+require 'pry'
 class EmailParser
   @@all = []
 
@@ -13,6 +9,7 @@ class EmailParser
   end
 
   def self.parse
+    binding.pry
     new_emails = emails.scan(/\S+@+[^,||^\s]{1,100}/)
     new_emails = new_emails.uniq
     new_emails
