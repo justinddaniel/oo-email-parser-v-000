@@ -12,7 +12,9 @@ class EmailParser
 
     self.new(emails)
     new_emails = emails.scan(/\S+@+[^,||^\s]{1,100}/)
-    new_emails = new_emails.uniq 
+    new_emails = new_emails.uniq
     new_emails.each do {|e| @@all << e}
+    new_emails
   end
+  
 end
