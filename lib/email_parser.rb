@@ -12,13 +12,9 @@ class EmailParser
     self.class.all << self
   end
 
-  def self.create_by_emails(emails)
-    c = EmailParser.new
-    c.emails = emails
-    c.save
-    c
-  end
+  def initiliaze
     
+
   def self.parse
     new_emails = emails.scan(/\S+@+[^,||^\s]{1,100}/)
     new_emails = new_emails.uniq
