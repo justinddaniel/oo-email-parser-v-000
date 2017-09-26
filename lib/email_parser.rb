@@ -8,9 +8,11 @@ class EmailParser
     @emails = emails
   end
 
+
+
   def self.parse
-    binding.pry
     new_emails = emails.scan(/\S+@+[^,||^\s]{1,100}/)
+    binding.pry
     new_emails = new_emails.uniq
     new_emails
   end
