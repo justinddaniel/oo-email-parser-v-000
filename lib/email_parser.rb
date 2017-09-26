@@ -16,5 +16,5 @@ class EmailParser
     new_emails.each do {|e| @@all << e}
     new_emails
   end
-  
+
 end
