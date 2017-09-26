@@ -6,6 +6,8 @@
 class EmailParser
   @@all = []
 
+  attr_accessor :emails
+
   def self.parse(emails)
-    emails_array << emails.scan(/\S+@+[^,||^\s]{1,100}/)
-    
+    self.new(emails)
+    @@all << emails.scan(/\S+@+[^,||^\s]{1,100}/)
