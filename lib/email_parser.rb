@@ -12,8 +12,9 @@ class EmailParser
     self.class.all << self
   end
 
-  def initiliaze
-    
+  def initiliaze(emails)
+    @emails = emails
+  end
 
   def self.parse
     new_emails = emails.scan(/\S+@+[^,||^\s]{1,100}/)
