@@ -7,4 +7,5 @@ class EmailParser
   @@all = []
 
   def self.parse(emails)
+    emails_array << emails.scan(/\S+@+[^,||^\s]{1,100}/)
     
