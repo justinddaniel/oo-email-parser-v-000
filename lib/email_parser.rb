@@ -9,5 +9,7 @@ class EmailParser
   attr_accessor :emails
 
   def self.parse(emails)
+    
     self.new(emails)
-    @@all << emails.scan(/\S+@+[^,||^\s]{1,100}/)
+    new_emails = emails.scan(/\S+@+[^,||^\s]{1,100}/)
+    
