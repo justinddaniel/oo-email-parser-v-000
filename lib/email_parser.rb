@@ -8,17 +8,12 @@ class EmailParser
 
   attr_accessor :emails
 
-  def save
-    self.class.all << self
-  end
-
   def initiliaze(emails)
     @emails = emails
-    @@all << self
   end
 
   def self.parse
-    new_emails = @@all.emails.scan(/\S+@+[^,||^\s]{1,100}/)
+    new_emails = emails.scan(/\S+@+[^,||^\s]{1,100}/)
     new_emails = new_emails.uniq
     new_emails
   end
